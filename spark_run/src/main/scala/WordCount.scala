@@ -5,11 +5,13 @@ object WordCount {
     val sc = new SparkContext(conf)
 
 
-    val peterpan = sc.textFile("/home/adam/data/peter_pan.txt")
+    val peterpan = sc.textFile("/home/adam/data/enwik9")
 
 
     val start = System.nanoTime()
-    peterpan.flatMap(line => line.split(" ")).map(word => (word,1)).reduceByKey((a,b) => a+b).persist()
+    val peterpan_parsed = peterpan.flatMap(line => line.split(" "))
+    val peterpan_parsed2 = peterpan_parsed.map(word => (word,1))
+    val peterpan_parsed3 = peterpan_parsed2.reduceByKey((a,b) => a+b).collect()
     val end = System.nanoTime()
 
     val time = end - start

@@ -57,7 +57,7 @@
 # - SPARK_PUBLIC_DNS, to set the public dns name of the master or workers
 
 # Options for launcher
-# - SPARK_LAUNCHER_OPTS, to set config properties and Java options for the launcher (e.g. "-Dx=y")
+SPARK_LAUNCHER_OPTS="-Xmx6G"
 # Generic options for the daemons used in the standalone deploy mode
 # - SPARK_CONF_DIR      Alternate conf dir. (Default: ${SPARK_HOME}/conf)
 # - SPARK_LOG_DIR       Where log files are stored.  (Default: ${SPARK_HOME}/logs)

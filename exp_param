@@ -1,2 +1,6 @@
 DatasetSize=100M
 Estimate RSS=1.2G
+
+The jvm is launched on a single numa node, with a cgroup limiting it's memory usage.
+The heap is mapped to a block device (based on linux brd)
+The block device just memcopies to an allocated buffer in another numa node

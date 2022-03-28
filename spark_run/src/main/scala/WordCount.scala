@@ -8,15 +8,15 @@ object WordCount {
     val peterpan = sc.textFile("/home/adam/data/enwik9")
 
 
-    val start = System.nanoTime()
+    val start = System.currentTimeMillis()
     val peterpan_parsed = peterpan.flatMap(line => line.split(" "))
     val peterpan_parsed2 = peterpan_parsed.map(word => (word,1))
     val peterpan_parsed3 = peterpan_parsed2.reduceByKey((a,b) => a+b).collect()
-    val end = System.nanoTime()
+    val end = System.currentTimeMillis()
 
     val time = end - start
 
-    println("Time: "+time+" ns ")
+    println("Time: "+time+" ms ")
 
 
   }

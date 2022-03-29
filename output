@@ -1,188 +1,282 @@
-[0.014s][info][gc] Using G1
-[0,538s][info][gc] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 28M->15M(126M) 9,148ms
-22/03/28 15:23:15 WARN Utils: Your hostname, vm-adam resolves to a loopback address: 127.0.1.1; using 192.168.1.241 instead (on interface ens18)
-[1,054s][info][gc] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 36M->18M(126M) 9,579ms
-22/03/28 15:23:15 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+[0.010s][info][gc] Using Concurrent Mark Sweep
+22/03/29 16:31:04 WARN Utils: Your hostname, vm-adam resolves to a loopback address: 127.0.1.1; using 192.168.1.241 instead (on interface ens18)
+22/03/29 16:31:04 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/home/adam/Spark_benchmark/spark_blk/jars/spark-unsafe_2.12-3.0.3.jar) to constructor java.nio.DirectByteBuffer(long,int)
 WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-[1,363s][info][gc] GC(2) Pause Young (Concurrent Start) (Metadata GC Threshold) 43M->18M(126M) 13,573ms
-[1,364s][info][gc] GC(3) Concurrent Cycle
-[1,386s][info][gc] GC(3) Pause Remark 19M->19M(126M) 11,078ms
-[1,393s][info][gc] GC(3) Pause Cleanup 20M->20M(126M) 0,100ms
-[1,395s][info][gc] GC(3) Concurrent Cycle 31,194ms
-22/03/28 15:23:15 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-[1,877s][info][gc] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 57M->19M(126M) 11,920ms
+[1,282s][info][gc] GC(0) Pause Young (Allocation Failure) 67M->16M(243M) 30,144ms
+22/03/29 16:31:04 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
-22/03/28 15:23:16 INFO SparkContext: Running Spark version 3.0.3
-22/03/28 15:23:16 INFO ResourceUtils: ==============================================================
-22/03/28 15:23:16 INFO ResourceUtils: Resources for spark.driver:
+22/03/29 16:31:05 INFO SparkContext: Running Spark version 3.0.3
+22/03/29 16:31:05 INFO ResourceUtils: ==============================================================
+22/03/29 16:31:05 INFO ResourceUtils: Resources for spark.driver:
 
-22/03/28 15:23:16 INFO ResourceUtils: ==============================================================
-22/03/28 15:23:16 INFO SparkContext: Submitted application: Word count
-22/03/28 15:23:16 INFO SecurityManager: Changing view acls to: root
-22/03/28 15:23:16 INFO SecurityManager: Changing modify acls to: root
-22/03/28 15:23:16 INFO SecurityManager: Changing view acls groups to: 
-22/03/28 15:23:16 INFO SecurityManager: Changing modify acls groups to: 
-22/03/28 15:23:16 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
-22/03/28 15:23:16 INFO Utils: Successfully started service 'sparkDriver' on port 43051.
-22/03/28 15:23:16 INFO SparkEnv: Registering MapOutputTracker
-22/03/28 15:23:16 INFO SparkEnv: Registering BlockManagerMaster
-22/03/28 15:23:16 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
-22/03/28 15:23:16 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
-22/03/28 15:23:16 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
-22/03/28 15:23:16 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-6cbf88d6-d9a9-4f14-bc97-184b2a15a6a7
-22/03/28 15:23:16 INFO MemoryStore: MemoryStore started with capacity 1015.2 MiB
-22/03/28 15:23:16 INFO SparkEnv: Registering OutputCommitCoordinator
-[2,580s][info][gc] GC(5) Pause Young (Concurrent Start) (Metadata GC Threshold) 84M->21M(163M) 11,612ms
-[2,580s][info][gc] GC(6) Concurrent Cycle
-[2,600s][info][gc] GC(6) Pause Remark 22M->22M(163M) 5,732ms
-[2,602s][info][gc] GC(6) Pause Cleanup 22M->22M(163M) 0,090ms
-[2,603s][info][gc] GC(6) Concurrent Cycle 22,818ms
-22/03/28 15:23:17 INFO Utils: Successfully started service 'SparkUI' on port 4040.
-22/03/28 15:23:17 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://vm-adam.local.inf.telecom-sudparis.eu:4040
-22/03/28 15:23:17 INFO SparkContext: Added JAR file:/home/adam/Spark_benchmark/spark_run/run.jar at spark://vm-adam.local.inf.telecom-sudparis.eu:43051/jars/run.jar with timestamp 1648473796109
-22/03/28 15:23:17 INFO Executor: Starting executor ID driver on host vm-adam.local.inf.telecom-sudparis.eu
-22/03/28 15:23:17 INFO Executor: Fetching spark://vm-adam.local.inf.telecom-sudparis.eu:43051/jars/run.jar with timestamp 1648473796109
-22/03/28 15:23:17 INFO TransportClientFactory: Successfully created connection to vm-adam.local.inf.telecom-sudparis.eu/192.168.1.241:43051 after 44 ms (0 ms spent in bootstraps)
-22/03/28 15:23:17 INFO Utils: Fetching spark://vm-adam.local.inf.telecom-sudparis.eu:43051/jars/run.jar to /tmp/spark-9333532f-07e9-4042-a8fd-d546f2e80bd4/userFiles-d9bdb2d4-a60c-4aa7-b11e-a4fd97e12003/fetchFileTemp2759718782837953693.tmp
-22/03/28 15:23:17 INFO Executor: Adding file:/tmp/spark-9333532f-07e9-4042-a8fd-d546f2e80bd4/userFiles-d9bdb2d4-a60c-4aa7-b11e-a4fd97e12003/run.jar to class loader
-22/03/28 15:23:17 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39201.
-22/03/28 15:23:17 INFO NettyBlockTransferService: Server created on vm-adam.local.inf.telecom-sudparis.eu:39201
-22/03/28 15:23:17 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
-22/03/28 15:23:17 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, vm-adam.local.inf.telecom-sudparis.eu, 39201, None)
-22/03/28 15:23:17 INFO BlockManagerMasterEndpoint: Registering block manager vm-adam.local.inf.telecom-sudparis.eu:39201 with 1015.2 MiB RAM, BlockManagerId(driver, vm-adam.local.inf.telecom-sudparis.eu, 39201, None)
-22/03/28 15:23:17 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, vm-adam.local.inf.telecom-sudparis.eu, 39201, None)
-22/03/28 15:23:17 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, vm-adam.local.inf.telecom-sudparis.eu, 39201, None)
-[3,514s][info][gc] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 98M->24M(163M) 11,496ms
-22/03/28 15:23:18 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 124.7 KiB, free 1015.1 MiB)
-22/03/28 15:23:18 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.5 KiB, free 1015.1 MiB)
-22/03/28 15:23:18 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on vm-adam.local.inf.telecom-sudparis.eu:39201 (size: 23.5 KiB, free: 1015.2 MiB)
-22/03/28 15:23:18 INFO SparkContext: Created broadcast 0 from textFile at WordCount.scala:8
-22/03/28 15:23:18 INFO FileInputFormat: Total input paths to process : 1
-22/03/28 15:23:18 INFO SparkContext: Starting job: collect at WordCount.scala:14
-[4,485s][info][gc] GC(8) Pause Young (Concurrent Start) (Metadata GC Threshold) 110M->27M(163M) 23,273ms
-[4,485s][info][gc] GC(9) Concurrent Cycle
-[4,507s][info][gc] GC(9) Pause Remark 28M->28M(163M) 6,530ms
-[4,514s][info][gc] GC(9) Pause Cleanup 29M->29M(163M) 0,071ms
-[4,515s][info][gc] GC(9) Concurrent Cycle 30,495ms
-22/03/28 15:23:18 INFO DAGScheduler: Registering RDD 3 (map at WordCount.scala:13) as input to shuffle 0
-22/03/28 15:23:18 INFO DAGScheduler: Got job 0 (collect at WordCount.scala:14) with 3 output partitions
-22/03/28 15:23:18 INFO DAGScheduler: Final stage: ResultStage 1 (collect at WordCount.scala:14)
-22/03/28 15:23:18 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
-22/03/28 15:23:18 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
-22/03/28 15:23:18 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[3] at map at WordCount.scala:13), which has no missing parents
-22/03/28 15:23:18 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 6.8 KiB, free 1015.0 MiB)
-22/03/28 15:23:18 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 1015.0 MiB)
-22/03/28 15:23:18 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on vm-adam.local.inf.telecom-sudparis.eu:39201 (size: 3.9 KiB, free: 1015.2 MiB)
-22/03/28 15:23:18 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1223
-22/03/28 15:23:18 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[3] at map at WordCount.scala:13) (first 15 tasks are for partitions Vector(0, 1, 2))
-22/03/28 15:23:18 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks
-22/03/28 15:23:19 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, vm-adam.local.inf.telecom-sudparis.eu, executor driver, partition 0, PROCESS_LOCAL, 7357 bytes)
-22/03/28 15:23:19 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, vm-adam.local.inf.telecom-sudparis.eu, executor driver, partition 1, PROCESS_LOCAL, 7357 bytes)
-22/03/28 15:23:19 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, vm-adam.local.inf.telecom-sudparis.eu, executor driver, partition 2, PROCESS_LOCAL, 7357 bytes)
-22/03/28 15:23:19 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
-22/03/28 15:23:19 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
-22/03/28 15:23:19 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
-22/03/28 15:23:19 INFO HadoopRDD: Input split: file:/home/adam/data/enwik9:33554432+33554432
-22/03/28 15:23:19 INFO HadoopRDD: Input split: file:/home/adam/data/enwik9:0+33554432
-22/03/28 15:23:19 INFO HadoopRDD: Input split: file:/home/adam/data/enwik9:67108864+32891136
-[5,378s][info][gc] GC(10) Pause Young (Normal) (G1 Evacuation Pause) 118M->32M(163M) 31,379ms
-[5,588s][info][gc] GC(11) Pause Young (Normal) (G1 Evacuation Pause) 127M->49M(213M) 27,758ms
-[5,747s][info][gc] GC(12) Pause Young (Normal) (G1 Evacuation Pause) 145M->58M(213M) 28,769ms
-[5,843s][info][gc] GC(13) Pause Young (Normal) (G1 Evacuation Pause) 152M->74M(213M) 20,390ms
-[5,928s][info][gc] GC(14) Pause Young (Normal) (G1 Evacuation Pause) 168M->81M(213M) 17,186ms
-[6,018s][info][gc] GC(15) Pause Young (Normal) (G1 Evacuation Pause) 170M->89M(287M) 22,837ms
-[6,186s][info][gc] GC(16) Pause Young (Normal) (G1 Evacuation Pause) 218M->111M(287M) 24,383ms
-[6,309s][info][gc] GC(17) Pause Young (Normal) (G1 Evacuation Pause) 225M->119M(287M) 30,758ms
-[6,417s][info][gc] GC(18) Pause Young (Normal) (G1 Evacuation Pause) 230M->126M(287M) 26,214ms
-[6,517s][info][gc] GC(19) Pause Young (Normal) (G1 Evacuation Pause) 233M->134M(463M) 24,243ms
-[6,707s][info][gc] GC(20) Pause Young (Normal) (G1 Evacuation Pause) 332M->145M(463M) 21,934ms
-[6,960s][info][gc] GC(21) Pause Young (Normal) (G1 Evacuation Pause) 388M->185M(463M) 41,624ms
-[7,138s][info][gc] GC(22) Pause Young (Normal) (G1 Evacuation Pause) 376M->197M(463M) 38,344ms
-[7,308s][info][gc] GC(23) Pause Young (Normal) (G1 Evacuation Pause) 382M->208M(894M) 37,398ms
-[7,800s][info][gc] GC(24) Pause Young (Normal) (G1 Evacuation Pause) 704M->232M(894M) 45,160ms
-[8,916s][info][gc] GC(25) Pause Young (Normal) (G1 Evacuation Pause) 412M->266M(894M) 69,805ms
-22/03/28 15:23:23 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1360 bytes result sent to driver
-22/03/28 15:23:23 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1360 bytes result sent to driver
-22/03/28 15:23:23 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1360 bytes result sent to driver
-22/03/28 15:23:23 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 4621 ms on vm-adam.local.inf.telecom-sudparis.eu (executor driver) (1/3)
-22/03/28 15:23:23 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 4605 ms on vm-adam.local.inf.telecom-sudparis.eu (executor driver) (2/3)
-22/03/28 15:23:23 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 4606 ms on vm-adam.local.inf.telecom-sudparis.eu (executor driver) (3/3)
-22/03/28 15:23:23 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
-22/03/28 15:23:23 INFO DAGScheduler: ShuffleMapStage 0 (map at WordCount.scala:13) finished in 4,782 s
-22/03/28 15:23:23 INFO DAGScheduler: looking for newly runnable stages
-22/03/28 15:23:23 INFO DAGScheduler: running: Set()
-22/03/28 15:23:23 INFO DAGScheduler: waiting: Set(ResultStage 1)
-22/03/28 15:23:23 INFO DAGScheduler: failed: Set()
-22/03/28 15:23:23 INFO DAGScheduler: Submitting ResultStage 1 (ShuffledRDD[4] at reduceByKey at WordCount.scala:14), which has no missing parents
-22/03/28 15:23:23 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 4.2 KiB, free 1015.0 MiB)
-22/03/28 15:23:23 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 2.5 KiB, free 1015.0 MiB)
-22/03/28 15:23:23 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on vm-adam.local.inf.telecom-sudparis.eu:39201 (size: 2.5 KiB, free: 1015.2 MiB)
-22/03/28 15:23:23 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1223
-22/03/28 15:23:23 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1 (ShuffledRDD[4] at reduceByKey at WordCount.scala:14) (first 15 tasks are for partitions Vector(0, 1, 2))
-22/03/28 15:23:23 INFO TaskSchedulerImpl: Adding task set 1.0 with 3 tasks
-22/03/28 15:23:23 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 3, vm-adam.local.inf.telecom-sudparis.eu, executor driver, partition 0, NODE_LOCAL, 7143 bytes)
-22/03/28 15:23:23 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 4, vm-adam.local.inf.telecom-sudparis.eu, executor driver, partition 1, NODE_LOCAL, 7143 bytes)
-22/03/28 15:23:23 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 5, vm-adam.local.inf.telecom-sudparis.eu, executor driver, partition 2, NODE_LOCAL, 7143 bytes)
-22/03/28 15:23:23 INFO Executor: Running task 1.0 in stage 1.0 (TID 4)
-22/03/28 15:23:23 INFO Executor: Running task 0.0 in stage 1.0 (TID 3)
-22/03/28 15:23:23 INFO Executor: Running task 2.0 in stage 1.0 (TID 5)
-22/03/28 15:23:23 INFO ShuffleBlockFetcherIterator: Getting 3 (7.5 MiB) non-empty blocks including 3 (7.5 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
-22/03/28 15:23:23 INFO ShuffleBlockFetcherIterator: Getting 3 (7.5 MiB) non-empty blocks including 3 (7.5 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
-22/03/28 15:23:23 INFO ShuffleBlockFetcherIterator: Getting 3 (7.5 MiB) non-empty blocks including 3 (7.5 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
-22/03/28 15:23:23 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 11 ms
-22/03/28 15:23:23 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 11 ms
-22/03/28 15:23:23 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 11 ms
-[11,122s][info][gc] GC(26) Pause Young (Normal) (G1 Evacuation Pause) 648M->464M(894M) 129,290ms
-[11,219s][info][gc] GC(27) Pause Young (Concurrent Start) (G1 Humongous Allocation) 468M->468M(1207M) 47,903ms
-[11,219s][info][gc] GC(28) Concurrent Cycle
-[11,386s][info][gc] GC(28) Pause Remark 486M->192M(1207M) 25,006ms
-22/03/28 15:23:25 INFO BlockManagerInfo: Removed broadcast_1_piece0 on vm-adam.local.inf.telecom-sudparis.eu:39201 in memory (size: 3.9 KiB, free: 1015.2 MiB)
-[11,523s][info][gc] GC(28) Pause Cleanup 214M->214M(1207M) 0,403ms
-[11,536s][info][gc] GC(28) Concurrent Cycle 316,773ms
-[11,842s][info][gc] GC(29) Pause Young (Normal) (G1 Evacuation Pause) 331M->231M(1207M) 5,325ms
-[12,105s][info][gc] GC(30) Pause Young (Normal) (G1 Evacuation Pause) 386M->286M(1207M) 9,647ms
-22/03/28 15:23:26 INFO MemoryStore: Block taskresult_5 stored as bytes in memory (estimated size 13.0 MiB, free 1002.0 MiB)
-22/03/28 15:23:26 INFO BlockManagerInfo: Added taskresult_5 in memory on vm-adam.local.inf.telecom-sudparis.eu:39201 (size: 13.0 MiB, free: 1002.1 MiB)
-22/03/28 15:23:26 INFO Executor: Finished task 2.0 in stage 1.0 (TID 5). 13668605 bytes result sent via BlockManager)
-22/03/28 15:23:26 INFO MemoryStore: Block taskresult_4 stored as bytes in memory (estimated size 13.0 MiB, free 989.0 MiB)
-22/03/28 15:23:26 INFO BlockManagerInfo: Added taskresult_4 in memory on vm-adam.local.inf.telecom-sudparis.eu:39201 (size: 13.0 MiB, free: 989.2 MiB)
-22/03/28 15:23:26 INFO Executor: Finished task 1.0 in stage 1.0 (TID 4). 13615929 bytes result sent via BlockManager)
-22/03/28 15:23:26 INFO MemoryStore: Block taskresult_3 stored as bytes in memory (estimated size 13.0 MiB, free 976.0 MiB)
-22/03/28 15:23:26 INFO BlockManagerInfo: Added taskresult_3 in memory on vm-adam.local.inf.telecom-sudparis.eu:39201 (size: 13.0 MiB, free: 976.1 MiB)
-22/03/28 15:23:26 INFO Executor: Finished task 0.0 in stage 1.0 (TID 3). 13673952 bytes result sent via BlockManager)
-22/03/28 15:23:26 INFO TransportClientFactory: Successfully created connection to vm-adam.local.inf.telecom-sudparis.eu/192.168.1.241:39201 after 11 ms (0 ms spent in bootstraps)
-[12,636s][info][gc] GC(31) Pause Young (Normal) (G1 Evacuation Pause) 590M->444M(1207M) 28,850ms
-[12,701s][info][gc] GC(32) Pause Young (Normal) (G1 Evacuation Pause) 510M->479M(1207M) 23,238ms
-[12,774s][info][gc] GC(33) Pause Young (Normal) (G1 Evacuation Pause) 552M->520M(1207M) 21,207ms
-[12,904s][info][gc] GC(34) Pause Young (Concurrent Start) (G1 Humongous Allocation) 659M->588M(1207M) 49,190ms
-[12,904s][info][gc] GC(35) Concurrent Cycle
-22/03/28 15:23:27 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 4) in 3534 ms on vm-adam.local.inf.telecom-sudparis.eu (executor driver) (1/3)
-22/03/28 15:23:27 INFO BlockManagerInfo: Removed taskresult_4 on vm-adam.local.inf.telecom-sudparis.eu:39201 in memory (size: 13.0 MiB, free: 989.1 MiB)
-22/03/28 15:23:27 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 3) in 3554 ms on vm-adam.local.inf.telecom-sudparis.eu (executor driver) (2/3)
-22/03/28 15:23:27 INFO BlockManagerInfo: Removed taskresult_3 on vm-adam.local.inf.telecom-sudparis.eu:39201 in memory (size: 13.0 MiB, free: 1002.1 MiB)
-22/03/28 15:23:27 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 5) in 3570 ms on vm-adam.local.inf.telecom-sudparis.eu (executor driver) (3/3)
-22/03/28 15:23:27 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
-22/03/28 15:23:27 INFO DAGScheduler: ResultStage 1 (collect at WordCount.scala:14) finished in 3,591 s
-22/03/28 15:23:27 INFO BlockManagerInfo: Removed taskresult_5 on vm-adam.local.inf.telecom-sudparis.eu:39201 in memory (size: 13.0 MiB, free: 1015.2 MiB)
-22/03/28 15:23:27 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
-22/03/28 15:23:27 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
-22/03/28 15:23:27 INFO DAGScheduler: Job 0 finished: collect at WordCount.scala:14, took 8,772800 s
-[13,057s][info][gc] GC(35) Pause Remark 683M->437M(1207M) 21,407ms
-Time: 8992 ms 
-22/03/28 15:23:27 INFO SparkContext: Invoking stop() from shutdown hook
-22/03/28 15:23:27 INFO SparkUI: Stopped Spark web UI at http://vm-adam.local.inf.telecom-sudparis.eu:4040
-22/03/28 15:23:27 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
-22/03/28 15:23:27 INFO MemoryStore: MemoryStore cleared
-22/03/28 15:23:27 INFO BlockManager: BlockManager stopped
-22/03/28 15:23:27 INFO BlockManagerMaster: BlockManagerMaster stopped
-22/03/28 15:23:27 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
-[13,183s][info][gc] GC(35) Pause Cleanup 457M->457M(1207M) 0,321ms
-22/03/28 15:23:27 INFO SparkContext: Successfully stopped SparkContext
-22/03/28 15:23:27 INFO ShutdownHookManager: Shutdown hook called
-22/03/28 15:23:27 INFO ShutdownHookManager: Deleting directory /tmp/spark-c1622ab2-340f-437e-bd77-60220cbda9e6
-22/03/28 15:23:27 INFO ShutdownHookManager: Deleting directory /tmp/spark-9333532f-07e9-4042-a8fd-d546f2e80bd4
-[13,197s][info][gc] GC(35) Concurrent Cycle 293,047ms
+22/03/29 16:31:05 INFO ResourceUtils: ==============================================================
+22/03/29 16:31:05 INFO SparkContext: Submitted application: Word count
+22/03/29 16:31:05 INFO SecurityManager: Changing view acls to: root
+22/03/29 16:31:05 INFO SecurityManager: Changing modify acls to: root
+22/03/29 16:31:05 INFO SecurityManager: Changing view acls groups to: 
+22/03/29 16:31:05 INFO SecurityManager: Changing modify acls groups to: 
+22/03/29 16:31:05 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+[2,091s][info][gc] GC(1) Pause Young (Allocation Failure) 83M->19M(243M) 17,468ms
+[2,094s][info][gc] GC(2) Pause Initial Mark 20M->20M(243M) 2,484ms
+[2,094s][info][gc] GC(2) Concurrent Mark
+[2,106s][info][gc] GC(2) Concurrent Mark 11,856ms
+[2,106s][info][gc] GC(2) Concurrent Preclean
+[2,108s][info][gc] GC(2) Concurrent Preclean 1,876ms
+[2,115s][info][gc] GC(2) Pause Remark 21M->21M(243M) 6,339ms
+[2,115s][info][gc] GC(2) Concurrent Sweep
+[2,117s][info][gc] GC(2) Concurrent Sweep 2,288ms
+[2,117s][info][gc] GC(2) Concurrent Reset
+[2,139s][info][gc] GC(2) Concurrent Reset 21,333ms
+22/03/29 16:31:05 INFO Utils: Successfully started service 'sparkDriver' on port 35275.
+22/03/29 16:31:05 INFO SparkEnv: Registering MapOutputTracker
+22/03/29 16:31:05 INFO SparkEnv: Registering BlockManagerMaster
+22/03/29 16:31:05 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/03/29 16:31:05 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/03/29 16:31:05 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/03/29 16:31:05 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-a9b5f954-593c-4295-a000-4fb81b8ce0c3
+22/03/29 16:31:05 INFO MemoryStore: MemoryStore started with capacity 2.2 GiB
+22/03/29 16:31:05 INFO SparkEnv: Registering OutputCommitCoordinator
+22/03/29 16:31:05 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2,719s][info][gc] GC(3) Pause Young (Allocation Failure) 86M->20M(243M) 8,010ms
+22/03/29 16:31:05 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://vm-adam.local.inf.telecom-sudparis.eu:4040
+22/03/29 16:31:05 INFO SparkContext: Added JAR file:/home/adam/Spark_benchmark/spark_run/run.jar at spark://vm-adam.local.inf.telecom-sudparis.eu:35275/jars/run.jar with timestamp 1648564265017
+22/03/29 16:31:06 INFO Executor: Starting executor ID driver on host vm-adam.local.inf.telecom-sudparis.eu
+22/03/29 16:31:06 INFO Executor: Fetching spark://vm-adam.local.inf.telecom-sudparis.eu:35275/jars/run.jar with timestamp 1648564265017
+22/03/29 16:31:06 INFO TransportClientFactory: Successfully created connection to vm-adam.local.inf.telecom-sudparis.eu/192.168.1.241:35275 after 42 ms (0 ms spent in bootstraps)
+22/03/29 16:31:06 INFO Utils: Fetching spark://vm-adam.local.inf.telecom-sudparis.eu:35275/jars/run.jar to /tmp/spark-9908d916-ddbc-43cc-95df-693b6bfb9222/userFiles-bc819375-9eeb-4a6b-932d-ab6e82847ed6/fetchFileTemp7948922209750875796.tmp
+22/03/29 16:31:06 INFO Executor: Adding file:/tmp/spark-9908d916-ddbc-43cc-95df-693b6bfb9222/userFiles-bc819375-9eeb-4a6b-932d-ab6e82847ed6/run.jar to class loader
+22/03/29 16:31:06 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45809.
+22/03/29 16:31:06 INFO NettyBlockTransferService: Server created on vm-adam.local.inf.telecom-sudparis.eu:45809
+22/03/29 16:31:06 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/03/29 16:31:06 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, vm-adam.local.inf.telecom-sudparis.eu, 45809, None)
+22/03/29 16:31:06 INFO BlockManagerMasterEndpoint: Registering block manager vm-adam.local.inf.telecom-sudparis.eu:45809 with 2.2 GiB RAM, BlockManagerId(driver, vm-adam.local.inf.telecom-sudparis.eu, 45809, None)
+22/03/29 16:31:06 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, vm-adam.local.inf.telecom-sudparis.eu, 45809, None)
+22/03/29 16:31:06 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, vm-adam.local.inf.telecom-sudparis.eu, 45809, None)
+[3,503s][info][gc] GC(4) Pause Young (Allocation Failure) 87M->24M(243M) 8,724ms
+22/03/29 16:31:07 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 124.7 KiB, free 2.2 GiB)
+22/03/29 16:31:07 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.5 KiB, free 2.2 GiB)
+22/03/29 16:31:07 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on vm-adam.local.inf.telecom-sudparis.eu:45809 (size: 23.5 KiB, free: 2.2 GiB)
+22/03/29 16:31:07 INFO SparkContext: Created broadcast 0 from textFile at WordCount.scala:8
+22/03/29 16:31:07 INFO FileInputFormat: Total input paths to process : 1
+22/03/29 16:31:07 INFO SparkContext: Starting job: collect at WordCount.scala:14
+[4,193s][info][gc] GC(5) Pause Young (Allocation Failure) 91M->27M(243M) 12,870ms
+[4,199s][info][gc] GC(6) Pause Initial Mark 27M->27M(243M) 2,803ms
+[4,199s][info][gc] GC(6) Concurrent Mark
+[4,216s][info][gc] GC(6) Concurrent Mark 17,252ms
+[4,216s][info][gc] GC(6) Concurrent Preclean
+[4,217s][info][gc] GC(6) Concurrent Preclean 1,126ms
+[4,217s][info][gc] GC(6) Concurrent Abortable Preclean
+22/03/29 16:31:07 INFO DAGScheduler: Registering RDD 3 (map at WordCount.scala:13) as input to shuffle 0
+22/03/29 16:31:07 INFO DAGScheduler: Got job 0 (collect at WordCount.scala:14) with 3 output partitions
+22/03/29 16:31:07 INFO DAGScheduler: Final stage: ResultStage 1 (collect at WordCount.scala:14)
+22/03/29 16:31:07 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+22/03/29 16:31:07 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+22/03/29 16:31:07 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[3] at map at WordCount.scala:13), which has no missing parents
+22/03/29 16:31:07 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 6.8 KiB, free 2.2 GiB)
+22/03/29 16:31:07 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 2.2 GiB)
+22/03/29 16:31:07 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on vm-adam.local.inf.telecom-sudparis.eu:45809 (size: 3.9 KiB, free: 2.2 GiB)
+22/03/29 16:31:07 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1223
+[4,599s][info][gc] GC(6) Concurrent Abortable Preclean 381,691ms
+[4,616s][info][gc] GC(6) Pause Remark 63M->63M(243M) 14,513ms
+[4,616s][info][gc] GC(6) Concurrent Sweep
+22/03/29 16:31:07 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[3] at map at WordCount.scala:13) (first 15 tasks are for partitions Vector(0, 1, 2))
+22/03/29 16:31:07 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks
+[4,622s][info][gc] GC(6) Concurrent Sweep 5,753ms
+[4,622s][info][gc] GC(6) Concurrent Reset
+[4,655s][info][gc] GC(6) Concurrent Reset 33,042ms
+22/03/29 16:31:07 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, vm-adam.local.inf.telecom-sudparis.eu, executor driver, partition 0, PROCESS_LOCAL, 7357 bytes)
+22/03/29 16:31:07 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, vm-adam.local.inf.telecom-sudparis.eu, executor driver, partition 1, PROCESS_LOCAL, 7357 bytes)
+22/03/29 16:31:07 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, vm-adam.local.inf.telecom-sudparis.eu, executor driver, partition 2, PROCESS_LOCAL, 7357 bytes)
+22/03/29 16:31:07 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+22/03/29 16:31:07 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+22/03/29 16:31:07 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+22/03/29 16:31:08 INFO HadoopRDD: Input split: file:/home/adam/data/enwik9:33554432+33554432
+22/03/29 16:31:08 INFO HadoopRDD: Input split: file:/home/adam/data/enwik9:0+33554432
+22/03/29 16:31:08 INFO HadoopRDD: Input split: file:/home/adam/data/enwik9:67108864+32891136
+[5,047s][info][gc] GC(7) Pause Young (Allocation Failure) 94M->28M(243M) 9,974ms
+[5,292s][info][gc] GC(8) Pause Young (Allocation Failure) 95M->33M(243M) 11,625ms
+[5,395s][info][gc] GC(9) Pause Young (Allocation Failure) 100M->42M(243M) 37,531ms
+[5,517s][info][gc] GC(10) Pause Young (Allocation Failure) 110M->50M(243M) 21,816ms
+[5,606s][info][gc] GC(11) Pause Young (Allocation Failure) 117M->60M(243M) 31,497ms
+[5,684s][info][gc] GC(12) Pause Young (Allocation Failure) 127M->66M(243M) 28,420ms
+[5,752s][info][gc] GC(13) Pause Young (Allocation Failure) 134M->72M(243M) 20,513ms
+[5,823s][info][gc] GC(14) Pause Young (Allocation Failure) 139M->76M(243M) 23,609ms
+[5,903s][info][gc] GC(15) Pause Young (Allocation Failure) 143M->84M(243M) 28,093ms
+[5,998s][info][gc] GC(16) Pause Young (Allocation Failure) 152M->95M(243M) 34,966ms
+[6,061s][info][gc] GC(17) Pause Young (Allocation Failure) 163M->99M(243M) 15,683ms
+[6,151s][info][gc] GC(18) Pause Young (Allocation Failure) 166M->105M(243M) 33,199ms
+[6,212s][info][gc] GC(19) Pause Young (Allocation Failure) 173M->107M(243M) 15,243ms
+[6,277s][info][gc] GC(20) Pause Young (Allocation Failure) 174M->111M(243M) 19,675ms
+[6,356s][info][gc] GC(21) Pause Young (Allocation Failure) 179M->116M(243M) 32,476ms
+[6,425s][info][gc] GC(22) Pause Young (Allocation Failure) 183M->120M(243M) 20,778ms
+[6,499s][info][gc] GC(23) Pause Young (Allocation Failure) 187M->124M(243M) 27,442ms
+[6,564s][info][gc] GC(24) Pause Young (Allocation Failure) 191M->128M(243M) 18,679ms
+[6,625s][info][gc] GC(25) Pause Young (Allocation Failure) 195M->131M(243M) 14,988ms
+[6,724s][info][gc] GC(26) Pause Young (Allocation Failure) 199M->151M(243M) 39,535ms
+[6,728s][info][gc] GC(27) Pause Initial Mark 151M->151M(243M) 2,636ms
+[6,728s][info][gc] GC(27) Concurrent Mark
+[6,836s][info][gc] GC(28) Pause Young (Allocation Failure) 218M->161M(243M) 53,057ms
+[6,923s][info][gc] GC(29) Pause Young (Allocation Failure) 228M->166M(243M) 34,677ms
+[6,991s][info][gc] GC(30) Pause Young (Allocation Failure) 233M->169M(243M) 17,834ms
+[7,066s][info][gc] GC(31) Pause Young (Allocation Failure) 236M->173M(243M) 27,129ms
+[7,143s][info][gc] GC(32) Pause Young (Allocation Failure) 240M->177M(245M) 24,421ms
+[7,190s][info][gc] GC(27) Concurrent Mark 461,816ms
+[7,190s][info][gc] GC(27) Concurrent Preclean
+[7,224s][info][gc] GC(33) Pause Young (Allocation Failure) 244M->180M(248M) 27,646ms
+[7,304s][info][gc] GC(34) Pause Young (Allocation Failure) 248M->184M(252M) 29,131ms
+[7,381s][info][gc] GC(35) Pause Young (Allocation Failure) 251M->187M(255M) 26,863ms
+[7,391s][info][gc] GC(27) Concurrent Preclean 201,054ms
+[7,391s][info][gc] GC(27) Concurrent Abortable Preclean
+[7,461s][info][gc] GC(36) Pause Young (Allocation Failure) 255M->191M(259M) 33,895ms
+[7,537s][info][gc] GC(37) Pause Young (Allocation Failure) 258M->194M(262M) 23,186ms
+[7,539s][info][gc] GC(27) Concurrent Abortable Preclean 148,186ms
+[7,597s][info][gc] GC(27) Pause Remark 197M->197M(262M) 56,869ms
+[7,597s][info][gc] GC(27) Concurrent Sweep
+[7,663s][info][gc] GC(38) Pause Young (Allocation Failure) 244M->180M(262M) 17,228ms
+[7,679s][info][gc] GC(27) Concurrent Sweep 82,082ms
+[7,679s][info][gc] GC(27) Concurrent Reset
+[7,689s][info][gc] GC(27) Concurrent Reset 9,683ms
+[7,734s][info][gc] GC(39) Pause Young (Allocation Failure) 247M->184M(362M) 21,407ms
+[7,803s][info][gc] GC(40) Pause Young (Allocation Failure) 251M->188M(362M) 20,775ms
+[7,861s][info][gc] GC(41) Pause Young (Allocation Failure) 255M->191M(362M) 13,635ms
+[7,921s][info][gc] GC(42) Pause Young (Allocation Failure) 258M->194M(362M) 16,622ms
+[7,986s][info][gc] GC(43) Pause Young (Allocation Failure) 261M->198M(362M) 22,411ms
+[8,479s][info][gc] GC(44) Pause Young (Allocation Failure) 264M->203M(362M) 33,245ms
+22/03/29 16:31:12 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1360 bytes result sent to driver
+22/03/29 16:31:12 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1317 bytes result sent to driver
+22/03/29 16:31:12 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1360 bytes result sent to driver
+22/03/29 16:31:12 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 4594 ms on vm-adam.local.inf.telecom-sudparis.eu (executor driver) (1/3)
+22/03/29 16:31:12 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 4617 ms on vm-adam.local.inf.telecom-sudparis.eu (executor driver) (2/3)
+22/03/29 16:31:12 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 4599 ms on vm-adam.local.inf.telecom-sudparis.eu (executor driver) (3/3)
+22/03/29 16:31:12 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+22/03/29 16:31:12 INFO DAGScheduler: ShuffleMapStage 0 (map at WordCount.scala:13) finished in 4,813 s
+22/03/29 16:31:12 INFO DAGScheduler: looking for newly runnable stages
+22/03/29 16:31:12 INFO DAGScheduler: running: Set()
+22/03/29 16:31:12 INFO DAGScheduler: waiting: Set(ResultStage 1)
+22/03/29 16:31:12 INFO DAGScheduler: failed: Set()
+22/03/29 16:31:12 INFO DAGScheduler: Submitting ResultStage 1 (ShuffledRDD[4] at reduceByKey at WordCount.scala:14), which has no missing parents
+22/03/29 16:31:12 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 4.2 KiB, free 2.2 GiB)
+[9,349s][info][gc] GC(45) Pause Young (Allocation Failure) 266M->204M(362M) 15,413ms
+22/03/29 16:31:12 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 2.5 KiB, free 2.2 GiB)
+22/03/29 16:31:12 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on vm-adam.local.inf.telecom-sudparis.eu:45809 (size: 2.5 KiB, free: 2.2 GiB)
+22/03/29 16:31:12 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1223
+22/03/29 16:31:12 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1 (ShuffledRDD[4] at reduceByKey at WordCount.scala:14) (first 15 tasks are for partitions Vector(0, 1, 2))
+22/03/29 16:31:12 INFO TaskSchedulerImpl: Adding task set 1.0 with 3 tasks
+22/03/29 16:31:12 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 3, vm-adam.local.inf.telecom-sudparis.eu, executor driver, partition 0, NODE_LOCAL, 7143 bytes)
+22/03/29 16:31:12 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 4, vm-adam.local.inf.telecom-sudparis.eu, executor driver, partition 1, NODE_LOCAL, 7143 bytes)
+22/03/29 16:31:12 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 5, vm-adam.local.inf.telecom-sudparis.eu, executor driver, partition 2, NODE_LOCAL, 7143 bytes)
+22/03/29 16:31:12 INFO Executor: Running task 0.0 in stage 1.0 (TID 3)
+22/03/29 16:31:12 INFO Executor: Running task 2.0 in stage 1.0 (TID 5)
+22/03/29 16:31:12 INFO Executor: Running task 1.0 in stage 1.0 (TID 4)
+22/03/29 16:31:12 INFO ShuffleBlockFetcherIterator: Getting 3 (7.5 MiB) non-empty blocks including 3 (7.5 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+22/03/29 16:31:12 INFO ShuffleBlockFetcherIterator: Getting 3 (7.5 MiB) non-empty blocks including 3 (7.5 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+22/03/29 16:31:12 INFO ShuffleBlockFetcherIterator: Getting 3 (7.5 MiB) non-empty blocks including 3 (7.5 MiB) local and 0 (0.0 B) host-local and 0 (0.0 B) remote blocks
+22/03/29 16:31:12 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 10 ms
+22/03/29 16:31:12 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 10 ms
+22/03/29 16:31:12 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 10 ms
+[9,729s][info][gc] GC(46) Pause Young (Allocation Failure) 271M->216M(362M) 33,233ms
+[10,035s][info][gc] GC(47) Pause Young (Allocation Failure) 283M->251M(362M) 77,480ms
+[10,044s][info][gc] GC(48) Pause Initial Mark 252M->252M(362M) 7,719ms
+[10,044s][info][gc] GC(48) Concurrent Mark
+[10,111s][info][gc] GC(48) Concurrent Mark 67,523ms
+[10,111s][info][gc] GC(48) Concurrent Preclean
+[10,139s][info][gc] GC(48) Concurrent Preclean 27,721ms
+[10,139s][info][gc] GC(48) Concurrent Abortable Preclean
+[10,299s][info][gc] GC(49) Pause Young (Allocation Failure) 315M->291M(362M) 89,006ms
+[10,400s][info][gc] GC(48) Concurrent Abortable Preclean 260,328ms
+[10,427s][info][gc] GC(48) Pause Remark 326M->326M(362M) 26,849ms
+[10,427s][info][gc] GC(48) Concurrent Sweep
+22/03/29 16:31:13 INFO BlockManagerInfo: Removed broadcast_1_piece0 on vm-adam.local.inf.telecom-sudparis.eu:45809 in memory (size: 3.9 KiB, free: 2.2 GiB)
+[10,599s][info][gc] GC(50) Pause Young (Allocation Failure) 243M->207M(362M) 54,772ms
+[10,689s][info][gc] GC(48) Concurrent Sweep 261,900ms
+[10,689s][info][gc] GC(48) Concurrent Reset
+[10,698s][info][gc] GC(48) Concurrent Reset 8,580ms
+[10,990s][info][gc] GC(51) Pause Young (Allocation Failure) 217M->197M(362M) 96,464ms
+[11,032s][info][gc] GC(52) Pause Initial Mark 203M->203M(362M) 20,192ms
+[11,032s][info][gc] GC(52) Concurrent Mark
+[11,209s][info][gc] GC(53) Pause Young (Allocation Failure) 261M->220M(362M) 13,195ms
+[11,241s][info][gc] GC(52) Concurrent Mark 208,946ms
+[11,241s][info][gc] GC(52) Concurrent Preclean
+[11,273s][info][gc] GC(52) Concurrent Preclean 32,345ms
+[11,273s][info][gc] GC(52) Concurrent Abortable Preclean
+[11,334s][info][gc] GC(54) Pause Young (Allocation Failure) 287M->256M(391M) 21,490ms
+[11,409s][info][gc] GC(52) Concurrent Abortable Preclean 135,844ms
+[11,445s][info][gc] GC(52) Pause Remark 305M->305M(391M) 33,700ms
+[11,445s][info][gc] GC(52) Concurrent Sweep
+[11,527s][info][gc] GC(55) Pause Young (Allocation Failure) 321M->292M(423M) 18,173ms
+[11,627s][info][gc] GC(56) Pause Young (Allocation Failure) 322M->307M(443M) 25,563ms
+[11,639s][info][gc] GC(52) Concurrent Sweep 193,523ms
+[11,639s][info][gc] GC(52) Concurrent Reset
+[11,648s][info][gc] GC(52) Concurrent Reset 8,503ms
+[11,739s][info][gc] GC(57) Pause Young (Allocation Failure) 372M->330M(574M) 17,248ms
+[11,742s][info][gc] GC(58) Pause Initial Mark 344M->344M(574M) 0,577ms
+[11,742s][info][gc] GC(58) Concurrent Mark
+22/03/29 16:31:14 INFO MemoryStore: Block taskresult_5 stored as bytes in memory (estimated size 13.0 MiB, free 2.2 GiB)
+22/03/29 16:31:14 INFO BlockManagerInfo: Added taskresult_5 in memory on vm-adam.local.inf.telecom-sudparis.eu:45809 (size: 13.0 MiB, free: 2.2 GiB)
+22/03/29 16:31:14 INFO Executor: Finished task 2.0 in stage 1.0 (TID 5). 13668605 bytes result sent via BlockManager)
+22/03/29 16:31:14 INFO MemoryStore: Block taskresult_3 stored as bytes in memory (estimated size 13.0 MiB, free 2.2 GiB)
+22/03/29 16:31:14 INFO BlockManagerInfo: Added taskresult_3 in memory on vm-adam.local.inf.telecom-sudparis.eu:45809 (size: 13.0 MiB, free: 2.2 GiB)
+22/03/29 16:31:14 INFO Executor: Finished task 0.0 in stage 1.0 (TID 3). 13673952 bytes result sent via BlockManager)
+22/03/29 16:31:14 INFO MemoryStore: Block taskresult_4 stored as bytes in memory (estimated size 13.0 MiB, free 2.1 GiB)
+22/03/29 16:31:14 INFO BlockManagerInfo: Added taskresult_4 in memory on vm-adam.local.inf.telecom-sudparis.eu:45809 (size: 13.0 MiB, free: 2.1 GiB)
+22/03/29 16:31:14 INFO Executor: Finished task 1.0 in stage 1.0 (TID 4). 13615929 bytes result sent via BlockManager)
+22/03/29 16:31:14 INFO TransportClientFactory: Successfully created connection to vm-adam.local.inf.telecom-sudparis.eu/192.168.1.241:45809 after 3 ms (0 ms spent in bootstraps)
+[11,892s][info][gc] GC(59) Pause Young (Allocation Failure) 392M->359M(574M) 35,002ms
+[11,945s][info][gc] GC(60) Pause Young (Allocation Failure) 414M->400M(574M) 16,236ms
+[12,003s][info][gc] GC(61) Pause Young (Allocation Failure) 458M->429M(574M) 13,793ms
+[12,179s][info][gc] GC(58) Concurrent Mark 436,625ms
+[12,179s][info][gc] GC(58) Concurrent Preclean
+[12,182s][info][gc] GC(58) Concurrent Preclean 3,293ms
+[12,182s][info][gc] GC(58) Concurrent Abortable Preclean
+[12,299s][info][gc] GC(58) Concurrent Abortable Preclean 116,841ms
+[12,312s][info][gc] GC(62) Pause Young (Allocation Failure) 496M->463M(574M) 50,059ms
+[12,344s][info][gc] GC(58) Pause Remark 464M->464M(574M) 31,477ms
+[12,344s][info][gc] GC(58) Concurrent Sweep
+[12,468s][info][gc] GC(63) Pause Young (Allocation Failure) 459M->419M(574M) 50,339ms
+[12,474s][info][gc] GC(58) Concurrent Sweep 129,766ms
+[12,475s][info][gc] GC(58) Concurrent Reset
+[12,489s][info][gc] GC(58) Concurrent Reset 14,125ms
+[12,541s][info][gc] GC(64) Pause Young (Allocation Failure) 457M->421M(712M) 37,399ms
+[12,548s][info][gc] GC(65) Pause Initial Mark 421M->421M(712M) 6,603ms
+[12,548s][info][gc] GC(65) Concurrent Mark
+[12,641s][info][gc] GC(66) Pause Young (Allocation Failure) 488M->445M(712M) 44,669ms
+[12,699s][info][gc] GC(67) Pause Young (Allocation Failure) 512M->493M(712M) 31,416ms
+[12,734s][info][gc] GC(65) Concurrent Mark 186,362ms
+[12,734s][info][gc] GC(65) Concurrent Preclean
+22/03/29 16:31:15 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 5) in 3371 ms on vm-adam.local.inf.telecom-sudparis.eu (executor driver) (1/3)
+22/03/29 16:31:15 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 4) in 3374 ms on vm-adam.local.inf.telecom-sudparis.eu (executor driver) (2/3)
+[12,795s][info][gc] GC(68) Pause Young (Allocation Failure) 560M->516M(712M) 48,627ms
+22/03/29 16:31:15 INFO BlockManagerInfo: Removed taskresult_4 on vm-adam.local.inf.telecom-sudparis.eu:45809 in memory (size: 13.0 MiB, free: 2.2 GiB)
+22/03/29 16:31:15 INFO BlockManagerInfo: Removed taskresult_5 on vm-adam.local.inf.telecom-sudparis.eu:45809 in memory (size: 13.0 MiB, free: 2.2 GiB)
+22/03/29 16:31:15 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 3) in 3435 ms on vm-adam.local.inf.telecom-sudparis.eu (executor driver) (3/3)
+22/03/29 16:31:15 INFO DAGScheduler: ResultStage 1 (collect at WordCount.scala:14) finished in 3,471 s
+22/03/29 16:31:15 INFO BlockManagerInfo: Removed taskresult_3 on vm-adam.local.inf.telecom-sudparis.eu:45809 in memory (size: 13.0 MiB, free: 2.2 GiB)
+22/03/29 16:31:15 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+22/03/29 16:31:15 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+22/03/29 16:31:15 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+22/03/29 16:31:15 INFO DAGScheduler: Job 0 finished: collect at WordCount.scala:14, took 8,631825 s
+Time: 8790 ms 
+22/03/29 16:31:15 INFO SparkContext: Invoking stop() from shutdown hook
+22/03/29 16:31:16 INFO SparkUI: Stopped Spark web UI at http://vm-adam.local.inf.telecom-sudparis.eu:4040
+[12,889s][info][gc] GC(65) Concurrent Preclean 154,253ms
+[12,889s][info][gc] GC(65) Concurrent Abortable Preclean
+22/03/29 16:31:16 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+22/03/29 16:31:16 INFO MemoryStore: MemoryStore cleared
+22/03/29 16:31:16 INFO BlockManager: BlockManager stopped
+22/03/29 16:31:16 INFO BlockManagerMaster: BlockManagerMaster stopped
+22/03/29 16:31:16 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+22/03/29 16:31:16 INFO SparkContext: Successfully stopped SparkContext
+22/03/29 16:31:16 INFO ShutdownHookManager: Shutdown hook called
+22/03/29 16:31:16 INFO ShutdownHookManager: Deleting directory /tmp/spark-9908d916-ddbc-43cc-95df-693b6bfb9222
+22/03/29 16:31:16 INFO ShutdownHookManager: Deleting directory /tmp/spark-760ea715-b2fa-4de6-8b09-1d767880a6f1
+[12,981s][info][gc] GC(65) Concurrent Abortable Preclean 91,963ms
+[13,021s][info][gc] GC(65) Pause Remark 546M->546M(712M) 40,420ms
+[13,022s][info][gc] GC(65) Concurrent Sweep
+[13,196s][info][gc] GC(65) Concurrent Sweep 174,792ms
+[13,196s][info][gc] GC(65) Concurrent Reset
+[13,204s][info][gc] GC(65) Concurrent Reset 7,549ms

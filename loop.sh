@@ -1,13 +1,13 @@
 #!/bin/bash
 
-for i in 500 800 1000 1200 1500; do
+for i in 512 768 1024 1280 1536 1792 2048; do
 	rmmod fakeblk
 	insmod /home/adam/fakeblk/brd/fakeblk.ko
 
 	printf "Size: %sM, " $i
-	./run.sh blklimit $i
+	./nogc.sh blklimit $i
 done
 
 printf "No Block, "
-./run.sh noblk
+./nogc.sh noblk
 

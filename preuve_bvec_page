@@ -1,0 +1,5 @@
+adam@vm-adam:~$ sudo bpftrace -e 'kprobe:brd_do_bvec { if(arg3==0 && arg2==4096){@page = count();}else{printf("offset:%d, len:%d\n", arg3, arg2);}}'
+Attaching 1 probe...
+^C
+
+@page: 32140675

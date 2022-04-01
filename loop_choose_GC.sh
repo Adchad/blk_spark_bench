@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in 512 768 1024 1280 1536 1792 2048; do
+for i in 1024 1536 2048 2560 3072 3584 4096; do
 	rmmod fakeblk
 	insmod /home/adam/fakeblk/brd/fakeblk.ko
 	printf "%sM," $i
